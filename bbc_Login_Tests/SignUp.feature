@@ -4,14 +4,14 @@
 	
 @SignUp
 Scenario: User needs to sign up 
-	Given User has no login cregentails 
+	Given User has no login credentials 
     When user click on Regsiter now link 
 	Then it should take them to register screen
 
 Scenario: User is under 13 
     Given Useris under 13 and needs to sign up 
-    When user clicks on under 13 button  
-    And is taken to page requesting parent or gadient email
+    And user clicks on under 13 button  
+    When is taken to page requesting parent or gadient email
     Then parent enters email adress and starts the sign up process
 
 @Over13SignUp

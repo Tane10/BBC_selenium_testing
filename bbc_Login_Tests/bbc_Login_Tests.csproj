@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="SignUp.cs" />
     <Compile Include="SignIn_noUser.cs" />
+    <Compile Include="TestFunctions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SpecFlow.NUnit.3.0.191\build\SpecFlow.NUnit.targets" Condition="Exists('..\packages\SpecFlow.NUnit.3.0.191\build\SpecFlow.NUnit.targets')" />

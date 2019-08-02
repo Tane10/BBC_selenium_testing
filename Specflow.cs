@@ -7,7 +7,7 @@ namespace BbcSignInTests
 {
     public class Specflow
     {
-        public Specflow()
+        public static void Main()
         {
             IWebDriver driver = new ChromeDriver();
             driver.Url = "https://account.bbc.com/signin";

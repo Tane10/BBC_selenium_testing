@@ -149,25 +149,6 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Dont have an account and need to sign up")]
-        public virtual void DontHaveAnAccountAndNeedToSignUp()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dont have an account and need to sign up", null, ((string[])(null)));
-#line 26
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 27
-    testRunner.Given("User enters regestored email with a short password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
-    testRunner.When("User clickes sign in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
-    testRunner.Then("message is shown below password box saying \"Sorry, that password is too short. It" +
-                    " needs to be eight characters or more.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore

@@ -23,7 +23,3 @@ Scenario: Sign in with regestored email and short password
     When User clickes sign in button
     Then message is shown below password box saying "Sorry, that password is too short. It needs to be eight characters or more."
 
-Scenario: Dont have an account and need to sign up
-    Given User enters regestored email with a short password
-    When User clickes sign in button
-    Then message is shown below password box saying "Sorry, that password is too short. It needs to be eight characters or more."

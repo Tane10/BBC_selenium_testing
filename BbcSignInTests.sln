@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BbcSignInTests", "BbcSignInTests.csproj", "{2B551532-0C5B-498D-9DDA-E0BB5210353F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bbc_Login_Tests", "bbc_Login_Tests\bbc_Login_Tests.csproj", "{432D194B-E614-40BE-A555-28D4528CA53F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2B551532-0C5B-498D-9DDA-E0BB5210353F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B551532-0C5B-498D-9DDA-E0BB5210353F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B551532-0C5B-498D-9DDA-E0BB5210353F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B551532-0C5B-498D-9DDA-E0BB5210353F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432D194B-E614-40BE-A555-28D4528CA53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432D194B-E614-40BE-A555-28D4528CA53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432D194B-E614-40BE-A555-28D4528CA53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432D194B-E614-40BE-A555-28D4528CA53F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

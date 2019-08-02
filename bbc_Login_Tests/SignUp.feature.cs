@@ -81,7 +81,7 @@ namespace bbc_Login_Tests
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
- testRunner.Given("User has no login cregentails", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User has no login credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
     testRunner.When("user click on Regsiter now link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
@@ -101,9 +101,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 12
     testRunner.Given("Useris under 13 and needs to sign up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
-    testRunner.When("user clicks on under 13 button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("user clicks on under 13 button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
-    testRunner.And("is taken to page requesting parent or gadient email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When("is taken to page requesting parent or gadient email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
     testRunner.Then("parent enters email adress and starts the sign up process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

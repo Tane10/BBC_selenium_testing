@@ -7,9 +7,42 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="nunit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="SpecFlow" Version="3.0.225" />
+    <PackageReference Include="SpecRun.SpecFlow" Version="3.0.377" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="75.0.3770.140" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="UnitTest1.cs" />
+    <Compile Remove="Specflow.cs" />
+    <Compile Remove="test.feature.cs" />
+    <Compile Remove="Bbc_Login.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Bbc_Login.feature">
+      <Visible>False</Visible>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Bbc_Login.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="test.feature">
+      <Visible>False</Visible>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Bbc_Login.feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Update="test.feature.cs">
+      <DependentUpon>test.feature</DependentUpon>
+    </SpecFlowObsoleteCodeBehindFiles>
+  </ItemGroup>
 </Project>

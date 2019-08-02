@@ -4,11 +4,10 @@ using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-
-namespace BbcSignInTests
+namespace bbc_Login_Tests
 {
     [Binding]
-    public class Bbc_Login
+    public class TestSteps
     {
         [Given("I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
@@ -22,9 +21,9 @@ namespace BbcSignInTests
             // additional string/Table parameters can be defined on the step definition
             // method. 
 
-            ScenarioContext.Current.Pending();
             IWebDriver driver = new ChromeDriver();
             driver.Url = "https://account.bbc.com/signin";
+             
         }
 
         [When("I press add")]
