@@ -1,0 +1,48 @@
+﻿username input box: id="user-identifier-input"
+<input type="email" class="field__input" 
+    id="user-identifier-input" 
+    required="" 
+    aria-required="true"
+    aria-invalid="true" 
+    autocomplete="username" 
+    autocapitalize="none" 
+    autocorrect="off" 
+    name="username" 
+    value="">
+
+
+passsword input box: id="password-input"
+<input type="password" class="field__input field__input--password-toggle" 
+id="password-input" 
+required="" 
+aria-required="true" 
+aria-invalid="true" 
+autocomplete="current-password" 
+autocapitalize="none" 
+autocorrect="off" 
+name="password" 
+value="">
+
+submit button id="submit-button"
+<button class="button button--full-width" aria-label="Sign in" type="submit" id="submit-button">
+    <span>
+        Sign in
+    </span>
+</button>
+
+reg now link: class="link link--primary"
+
+
+Under 13 button
+<a aria-label="Under 13" href="/register/details/guardian?nonce=I3kUgedB-Rggs-o_suFp4fGJLzaXNbc5Npnk" class="button">
+    <span>
+        Under 13
+    </span>
+</a>
+
+Over 13 button
+<a aria-label="13 or over" href="/register/details/age?nonce=I3kUgedB-Rggs-o_suFp4fGJLzaXNbc5Npnk" class="button">
+    <span>
+        13 or over
+    </span>
+</a>
