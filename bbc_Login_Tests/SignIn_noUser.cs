@@ -20,6 +20,11 @@ namespace bbc_Login_Tests
 
         }
 
+        public void  DriverCloseQuit()
+        {
+            driver.Close();
+            driver.Quit();
+        }
 
         public void ButtonClickById(string id, IWebDriver driver)
         {
@@ -49,15 +54,45 @@ namespace bbc_Login_Tests
             element.SendKeys(text);
         }
 
-        public string MessageReader(IWebDriver driver, string classname)
+
+        public bool MessageReaderById(IWebDriver driver, string id,string equalString)
+        {
+            IWebElement element = driver.FindElement(By.Id(id));
+            string innerText = element.Text;
+            bool textMatch = true;
+            bool textNotMatch = false;
+            Console.WriteLine(equalString);
+
+            if(innerText == equalString)
+            {
+
+                return textMatch;
+            }
+            else
+            {
+                return textNotMatch;
+            }
+        }
+
+
+        public bool MessageReaderByClass(IWebDriver driver, string classname, string equalString)
         {
             IWebElement element = driver.FindElement(By.ClassName(classname));
             string innerText = element.Text;
-            Console.WriteLine(innerText); 
+            bool textMatch = true;
+            bool textNotMatch = false;
+            Console.WriteLine(equalString);
 
-            return innerText;
+            if (innerText == equalString)
+            {
+
+                return textMatch;
+            }
+            else
+            {
+                return textNotMatch;
+            }
         }
-
         #endregion
 
 
@@ -66,118 +101,104 @@ namespace bbc_Login_Tests
         [Given("User hasn't entered any username or password")]
         public void Userhasntenteredanyusernameorpassword() => InitChrome();
 
-        [When("User clickes sign in button")]
-        public void Userclickessigninbutton() =>
-            ButtonClickById("submit-button", driver);
-
-        [Then("3 red boxes with text should show on page two stating Something's missing. Please check and try again. one saying Sorry, those details don't match.Check you've typed them correctly.")]
-        public void redboxeswithtextshouldshow()
+        [When(@"User clickes sign in button with no infomation")]
+        public void WhenUserClickesSignInButtonWithNoInfomation()
         {
-            // TODO: implement assert (verification) logic
-
-            MessageReader(driver, "form-message__text");
-            driver.Quit();
+            ButtonClickById("submit-button", driver);
         }
+
+        [Then(@"(.*) red boxes with text should show on page two stating ""(.*)"" one saying ""(.*)""")]
+        public void ThenRedBoxesWithTextShouldShowOnPageTwoStatingOneSaying(int p0, string p1, string p2)
+        {
+            MessageReaderById(driver, "form-message-username", "Something's missing. Please check and try again.");
+            DriverCloseQuit();
+
+        }
+       
         #endregion
 
+        
         #region User enters incorrect email or username with no password
         [Given("User enters incorrect email or username with no password")]
-        public void Userentersincorrectemailorusernamewithnopassword(string details)
+        public void Userentersincorrectemailorusernamewithnopassword()
         {
-            // TODO: implement arrange (recondition) logic
-            // For storing and retrieving scenario-specific data, 
-            // the instance fields of the class or the
-            //     ScenarioContext.Current
-            // collection can be used.
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
+            InitChrome();
+            EnterInputByClass("field__input", driver, "jeff");
 
-            ScenarioContext.Current.Pending();
         }
 
-        [When("User clickes sign in button")]
-        public void clickessigninbuttonincorrectcreds(string id)
+        [When(@"User clickes sign in button with no pass and wrong email")]
+        public void WhenUserClickesSignInButtonWithNoPassAndWrongEmail()
         {
-            // TODO: implement act (action) logic
-
-            ScenarioContext.Current.Pending();
+            ButtonClickById("submit-button", driver);
         }
 
-        [Then("two red boxes will show password related stating Something's missing. Please check and try again. and top message above username saying Sorry, those details don't match.Check you've typed them correctly.")]
-        public void tworedboxeswillshowpasswordrelated(string result)
+        [Then(@"two red boxes will show password related stating ""(.*)"" and top message above username saying ""(.*)""")]
+        public void ThenTwoRedBoxesWillShowPasswordRelatedStatingAndTopMessageAboveUsernameSaying(string p0, string p1)
         {
-            // TODO: implement assert (verification) logic
-
-            ScenarioContext.Current.Pending();
+            MessageReaderById(driver, "form-message-general", "Something's missing. Please check and try again.");
+            DriverCloseQuit();
         }
+
         #endregion
 
         #region Sign in with non-regestored email and wrong password
-        [Given("Sign in with non-regestored email and wrong password")]
-        public void Signinwithnonregestoredemailandwrongpassword(string details)
+        [Given(@"User enters non-regestored email with a password")]
+        public void GivenUserEntersNon_RegestoredEmailWithAPassword()
         {
-            // TODO: implement arrange (recondition) logic
-            // For storing and retrieving scenario-specific data, 
-            // the instance fields of the class or the
-            //     ScenarioContext.Current
-            // collection can be used.
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            ScenarioContext.Current.Pending();
+            InitChrome();
+            EnterInputByClass("field__input", driver, "jeff.test@gmail.com");
+            EnterInputById("password-input", driver, "apple");
+       
         }
 
-        [When("User clickes sign in button")]
-        public void Userclickessigninbuttonnonregestored(string id)
+        [When(@"User clickes sign in button with non-regestored email and wrong password")]
+        public void WhenUserClickesSignInButtonWithNon_RegestoredEmailAndWrongPassword()
         {
-            // TODO: implement act (action) logic
-
-            ScenarioContext.Current.Pending();
+            ButtonClickById("submit-button", driver);
         }
 
-        [Then("One box appers under the username saying Sorry, we can’t find an account with that email.You can register for a new account or get help here.")]
-        public void oneboxappersundertheusername(string result)
-        {
-            // TODO: implement assert (verification) logic
 
-            ScenarioContext.Current.Pending();
+        [Then(@"One box appers under the username saying ""(.*)""")]
+        public void ThenOneBoxAppersUnderTheUsernameSaying(string p0)
+        {
+
+            MessageReaderByClass(driver, "form-message__text", "Sorry, that password is too short.It needs to be eight characters or more.");
+            DriverCloseQuit();
+
+            
         }
         #endregion
 
         #region Sign in with regestored email and short password
-        [Given("Sign in with regestored email and short password")]
-        public void Userentersregestoredemailashortpassword(string details)
-        {
-            // TODO: implement arrange (recondition) logic
-            // For storing and retrieving scenario-specific data, 
-            // the instance fields of the class or the
-            //     ScenarioContext.Current
-            // collection can be used.
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
 
-            ScenarioContext.Current.Pending();
+
+        [Given(@"User enters regestored email with a short password")]
+        public void GivenUserEntersRegestoredEmailWithAShortPassword()
+        {
+            InitChrome();
+            EnterInputByClass("field__input", driver, "j.thomas.gmail.com");
+            EnterInputById("password-input", driver, "apple");
         }
 
-        [When("User clickes sign in button")]
-        public void Userclickessigninbuttonregemailshortps(string id)
+        [When(@"User clickes sign in button with regestored email and short password")]
+        public void WhenUserClickesSignInButtonIwithRegestoredEmailAndShortPassword()
         {
-            // TODO: implement act (action) logic
-
-            ScenarioContext.Current.Pending();
+            ButtonClickById("submit-button", driver);
         }
 
-        [Then("message is shown below password box saying Sorry, that password is too short.It needs to be eight characters or more.")]
-        public void messageisshownbelowpasswordboxsayingSorry(string result)
+        [Then(@"message is shown below password box saying ""(.*)""")]
+        public void ThenMessageIsShownBelowPasswordBoxSaying(string p0)
         {
-            // TODO: implement assert (verification) logic
-
-            ScenarioContext.Current.Pending();
+            MessageReaderByClass(driver, "form-message__text", "Sorry, that password is too short.It needs to be eight characters or more.");
+            MessageReaderById(driver, "form-message-username", "Usernames can only include... Letters, numbers and these characters: ?/|}{+=_-^~`%$#");
+            DriverCloseQuit();
         }
         #endregion
 
+    }
+
+    internal class SelectElement
+    {
     }
 }

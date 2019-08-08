@@ -19,6 +19,7 @@ namespace bbc_Login_Tests
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("sign in page")]
+    [NUnit.Framework.IgnoreAttribute("Ignored feature")]
     public partial class SignInPageFeature
     {
         
@@ -32,7 +33,8 @@ namespace bbc_Login_Tests
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "sign in page", "\tBefore we can make it to the next page we need to do these test for \n    sign in" +
-                    ".", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    ".", ProgrammingLanguage.CSharp, new string[] {
+                        "ignore"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,14 +79,14 @@ namespace bbc_Login_Tests
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sign in with no infomation", null, new string[] {
                         "SigningIn"});
-#line 6
+#line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
- testRunner.Given("User hasn\'t entered any username or password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.When("User clickes sign in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("User hasn\'t entered any username or password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
+ testRunner.When("User clickes sign in button with no infomation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
  testRunner.Then("3 red boxes with text should show on page two stating \"Something\'s missing. Pleas" +
                     "e check and try again.\" one saying \"Sorry, those details don\'t match. Check you\'" +
                     "ve typed them correctly.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -97,14 +99,14 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void SignInWithNoPassAndWrongEmail()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sign in with no pass and wrong email", null, ((string[])(null)));
-#line 11
+#line 12
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 12
-    testRunner.Given("User enters incorrect email or username with no password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
-    testRunner.When("User clickes sign in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("User enters incorrect email or username with no password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
+    testRunner.When("User clickes sign in button with no pass and wrong email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
     testRunner.Then("two red boxes will show password related stating \"Something\'s missing. Please che" +
                     "ck and try again.\" and top message above username saying \"Sorry, those details d" +
                     "on\'t match. Check you\'ve typed them correctly.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -117,14 +119,14 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void SignInWithNon_RegestoredEmailAndWrongPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sign in with non-regestored email and wrong password", null, ((string[])(null)));
-#line 16
+#line 17
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 17
-    testRunner.Given("User enters non-regestored email with a password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 18
-    testRunner.When("User clickes sign in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("User enters non-regestored email with a password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 19
+    testRunner.When("User clickes sign in button with non-regestored email and wrong password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
     testRunner.Then("One box appers under the username saying \"Sorry, we can’t find an account with th" +
                     "at email. You can register for a new account or get help here.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -136,14 +138,14 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void SignInWithRegestoredEmailAndShortPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sign in with regestored email and short password", null, ((string[])(null)));
-#line 21
+#line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 22
-    testRunner.Given("User enters regestored email with a short password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
-    testRunner.When("User clickes sign in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
+    testRunner.Given("User enters regestored email with a short password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+    testRunner.When("User clickes sign in button with regestored email and short password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
     testRunner.Then("message is shown below password box saying \"Sorry, that password is too short. It" +
                     " needs to be eight characters or more.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

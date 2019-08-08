@@ -71,40 +71,22 @@ namespace bbc_Login_Tests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User needs to sign up")]
-        [NUnit.Framework.CategoryAttribute("SignUp")]
-        public virtual void UserNeedsToSignUp()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User needs to sign up", null, new string[] {
-                        "SignUp"});
-#line 6
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
- testRunner.Given("User has no login credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
-    testRunner.When("user click on Regsiter now link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
- testRunner.Then("it should take them to register screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User is under 13")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void UserIsUnder13()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is under 13", null, ((string[])(null)));
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is under 13", null, new string[] {
+                        "ignore"});
+#line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 12
+#line 8
     testRunner.Given("Useris under 13 and needs to sign up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
+#line 9
     testRunner.And("user clicks on under 13 button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
+#line 10
     testRunner.When("is taken to page requesting parent or gadient email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 11
     testRunner.Then("parent enters email adress and starts the sign up process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -112,19 +94,21 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User is over 13")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("Over13SignUp")]
         public virtual void UserIsOver13()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is over 13", null, new string[] {
+                        "ignore",
                         "Over13SignUp"});
-#line 18
+#line 14
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 19
+#line 15
     testRunner.Given("User is over 13", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
+#line 16
     testRunner.When("user click on over 13 button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
+#line 17
     testRunner.Then("it should take them to register screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -135,14 +119,14 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void UserEnterDayMonthYearInWrongFormate()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enter day, month, year in wrong formate", null, ((string[])(null)));
-#line 23
+#line 19
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 24
+#line 20
     testRunner.Given("User is presented with DOB boxes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 25
+#line 21
     testRunner.When("user enters charectors instead of numbers and clicks continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
+#line 22
     testRunner.Then("they should be present with a red warning box explaing the correct format \"Oops, " +
                     "that date doesn\'t look right. Make sure it\'s a real date written as DD-MM-YYYY e" +
                     ".g. the 5th of June 2009 is 05-06-2009.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -152,17 +136,19 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User enter a DOB that is not above 13 but in correct formate")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void UserEnterADOBThatIsNotAbove13ButInCorrectFormate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enter a DOB that is not above 13 but in correct formate", null, ((string[])(null)));
-#line 28
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enter a DOB that is not above 13 but in correct formate", null, new string[] {
+                        "ignore"});
+#line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 29
+#line 25
     testRunner.Given("User enter their DOB in correct formate but doesn\'t make them over 13", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 30
+#line 26
     testRunner.When("user click on continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 27
     testRunner.Then("it should show a message stating that there under the age of 13 \"Sorry, you need " +
                     "to be 13 or over.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -171,17 +157,19 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User enters correct details and is taken to the register page")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void UserEntersCorrectDetailsAndIsTakenToTheRegisterPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enters correct details and is taken to the register page", null, ((string[])(null)));
-#line 33
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enters correct details and is taken to the register page", null, new string[] {
+                        "ignore"});
+#line 29
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 34
+#line 30
     testRunner.Given("User enter their DOB in correct formate and is over 13", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 35
+#line 31
     testRunner.When("user click on continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 32
     testRunner.Then("it takes user to Register with the BBC screen asking for more details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -189,18 +177,20 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User enter all details on registor page incorrectly with a short postcode")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void UserEnterAllDetailsOnRegistorPageIncorrectlyWithAShortPostcode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enter all details on registor page incorrectly with a short postcode", null, ((string[])(null)));
-#line 38
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enter all details on registor page incorrectly with a short postcode", null, new string[] {
+                        "ignore"});
+#line 34
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 39
+#line 35
     testRunner.Given("User enters a word for email, enters a password too short and a postcode that is " +
                     "too short", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 40
+#line 36
     testRunner.When("user clicks register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 37
     testRunner.Then("it should fail and tell then that the password is too short, passcode is too shor" +
                     "t and the email doesn\'t look like a real email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -209,18 +199,20 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User enters correct email, a password with only letters and a incorrect passcode")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void UserEntersCorrectEmailAPasswordWithOnlyLettersAndAIncorrectPasscode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enters correct email, a password with only letters and a incorrect passcode", null, ((string[])(null)));
-#line 43
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enters correct email, a password with only letters and a incorrect passcode", null, new string[] {
+                        "ignore"});
+#line 39
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 44
+#line 40
     testRunner.Given("User enters a correct email address, a password only containing letters and an in" +
                     "vaild postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 45
+#line 41
     testRunner.When("user clicks register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 46
+#line 42
     testRunner.Then("its fails and informs that \"Sorry, that password isn\'t valid. Please include some" +
                     "thing that isn\'t a letter.\" and \"Sorry, that postcode isn\'t valid. Please check " +
                     "it\'s a proper postcode.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -230,17 +222,19 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("User enters all correct details")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void UserEntersAllCorrectDetails()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enters all correct details", null, ((string[])(null)));
-#line 48
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User enters all correct details", null, new string[] {
+                        "ignore"});
+#line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 49
+#line 45
     testRunner.Given("User enter all correct registration details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 50
+#line 46
     testRunner.When("user clicks register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 51
+#line 47
     testRunner.Then("taken to the next page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
